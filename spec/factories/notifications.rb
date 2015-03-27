@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :notifiaction do
-    
+  factory :notification do
+
   end
 
 end

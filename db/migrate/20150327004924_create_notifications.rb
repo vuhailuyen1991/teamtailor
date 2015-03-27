@@ -1,6 +1,6 @@
-class CreateNotifiactions < ActiveRecord::Migration
+class CreateNotifications < ActiveRecord::Migration
   def change
-    create_table :notifiactions do |t|
+    create_table :notifications do |t|
       t.string      :message
       t.datetime    :notify_at
       t.integer     :candidate_id
