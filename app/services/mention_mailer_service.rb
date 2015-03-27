@@ -1,0 +1,3 @@
+class MentionMailerService
+
+end

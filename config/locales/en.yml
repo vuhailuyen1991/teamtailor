@@ -21,3 +21,5 @@
 
 en:
   hello: "Hello world"
+  mention_email:
+    subject: "%{user} mentioned you in a review for %{candidate}"
