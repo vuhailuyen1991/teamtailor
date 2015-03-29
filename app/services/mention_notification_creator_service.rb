@@ -1,4 +1,4 @@
-class Services::MentionNotificationCreatorService < Services::MentionService
+class MentionNotificationCreatorService < MentionService
 
   def initialize args
     @receiver = args[:receiver]

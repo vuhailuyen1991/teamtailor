@@ -1,4 +1,4 @@
-class Services::MentionMailerService
+class MentionMailerService
 
   def initialize args
     @notification = args[:notification]

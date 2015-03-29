@@ -1,4 +1,4 @@
-class Services::MentionService
+class MentionService
 
   def initialize args
     @receiver = args[:receiver]
@@ -9,8 +9,8 @@ class Services::MentionService
 
 
   def mention
-    send_notification
-    send_email
+    notification = create_notification
+    send_email notification
   end
 
   protected
@@ -24,11 +24,11 @@ class Services::MentionService
   end
 
   private
-  def send_notification
-    @notification = Services::MentionNotificationCreatorService.new(notification_params).create
+  def create_notification
+    MentionNotificationCreatorService.new(notification_params).create
   end
 
-  def send_email
-    Services::MentionMailerService.new(@notification).send
+  def send_email notification
+    MentionMailerService.new(notification: notification).send
   end
 end

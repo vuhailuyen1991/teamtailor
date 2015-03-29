@@ -8,8 +8,8 @@
 
 users = [
          {username: 'luyen.vu', first_name: 'Luyen', last_name: 'Vu', email: 'luyen.vu@teamtailor.com'},
-         {username: 'luyen.vu', first_name: 'An', last_name: 'Nguyen', email: 'an.nguyen@teamtailor.com'},
-         {username: 'luyen.vu', first_name: 'Lee', last_name: 'Tran', email: 'lee.tran@teamtailor.com'}
+         {username: 'an.nguyen', first_name: 'An', last_name: 'Nguyen', email: 'an.nguyen@teamtailor.com'},
+         {username: 'lee.tran', first_name: 'Lee', last_name: 'Tran', email: 'lee.tran@teamtailor.com'}
         ]
 users.each do |u|
   u1 = User.new
@@ -19,6 +19,9 @@ users.each do |u|
   u1.email = u[:email]
   u1.password = u[:username]
   u1.save!
+  setting = UserSetting.new
+  setting.user = u1
+  setting.save!
 end
 
 candidates = [
@@ -32,3 +35,8 @@ candidates.each do |d|
   d1.email = d[:email]
   d1.save!
 end
+
+lee = User.find_by_username 'lee.tran'
+lee.user_setting.metion_setting = 1
+lee.user_setting.save!
+
