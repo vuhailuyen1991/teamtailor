@@ -1,4 +1,4 @@
-class MentionNotificationCreatorService
+class Services::MentionNotificationCreatorService < Services::MentionService
 
   def initialize args
     @receiver = args[:receiver]
@@ -9,16 +9,6 @@ class MentionNotificationCreatorService
 
   def create
     Notification.create_notification notification_params
-  end
-
-  private
-  def notification_params
-    {
-      receiver: @receiver,
-      sender: @sender,
-      candidate: @candidate,
-      message: @message
-    }
   end
 
 end
