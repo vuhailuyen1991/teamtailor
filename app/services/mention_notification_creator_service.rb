@@ -8,11 +8,11 @@ class MentionNotificationCreatorService
   end
 
   def create
-    Notification.create_notification params
+    Notification.create_notification notification_params
   end
 
   private
-  def params
+  def notification_params
     {
       receiver: @receiver,
       sender: @sender,
