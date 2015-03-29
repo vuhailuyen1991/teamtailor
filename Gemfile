@@ -28,6 +28,10 @@ gem 'spring',        group: :development
 gem "devise"
 gem "active_model_serializers"
 gem 'materialize-sass'
+gem 'resque'
+gem 'resque-scheduler'
+gem 'whenever', :require => false
+gem 'squeel'
 
 group :development do
   gem "better_errors"

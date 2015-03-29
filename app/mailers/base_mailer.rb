@@ -10,4 +10,11 @@ class BaseMailer < ActionMailer::Base
         )
   end
 
+  def system_mail(to_email, subject)
+    mail(sender: 'noreply@teamtailor.com',
+          from: 'support@teamtailor.com',
+          to: to_email,
+          subject: subject)
+  end
+
 end

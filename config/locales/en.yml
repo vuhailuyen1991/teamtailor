@@ -21,5 +21,7 @@
 
 en:
   hello: "Hello world"
+  mention_daily_email:
+    subject: "TeamTailor Daily Report"
   mention_email:
     subject: "%{user} mentioned you in a review for %{candidate}"
