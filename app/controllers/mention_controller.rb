@@ -1,4 +1,5 @@
 class MentionController < ApplicationController
+  respond_to :json
   before_filter :validate_mention, only: [:create]
 
   def create

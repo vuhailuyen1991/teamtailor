@@ -1,0 +1,103 @@
+#page-wrapper
+  .row
+    .col-lg-12
+      h1.page-header User Detail
+    .col-lg-12 ng-show="updateSuccess"
+      div.alert.alert-success.alert-dismissible role="alert"
+        button type="button" class="close" data-dismiss="alert" aria-label="Close"
+          span aria-hidden="true"
+            | &times;
+        span
+          | User has been updated successfully.
+    .col-lg-12 ng-show="updateFailed"
+      div.alert.alert-danger.alert-dismissible role="alert"
+        button type="button" class="close" data-dismiss="alert" aria-label="Close"
+          span aria-hidden="truetrue"
+            | &times;
+        span
+          | There was an error while updating user. Please try again. {{ failedMessage }}
+  .row
+    .col-lg-12
+      .panel.panel-default
+        .panel-heading
+          | Reset Password
+        .panel-body
+          .row
+            .col-lg-6
+              form role="form" name="updateUserForm"
+                .form-group ng-class="{ 'has-error' : updateUserForm.password.$invalid && !updateUserForm.password.$pristine }"
+                  label Password
+                  input.form-control ng-model='user.password' type="password" ng-required="true" name="password"
+                .form-group ng-class="{ 'has-error' : updateUserForm.passwordConfirmation.$invalid && !updateUserForm.passwordConfirmation.$pristine }"
+                  label Password Confirmation
+                  input.form-control ng-model='user.passwordConfirmation' type="password" ng-required="true" name="passwordConfirmation"
+                .form-group
+                  button.btn.btn-outline.btn-primary.btn-block ng-click='updateUser()' ng-disabled="updateUserForm.$invalid"
+                    | Submit
+            .col-lg-6
+              .form-group ng-if="showUserStatus"
+                  label User status
+                  button.btn.btn-outline.btn-danger.btn-block ng-if="user.active" ng-click="deactive(user)"
+                    | Deactive
+                  button.btn.btn-outline.btn-success.btn-block ng-if="!user.active" ng-click="active(user)"
+                    | Active
+
+      .panel.panel-default
+        .panel-heading
+          | User Information
+        .panel-body
+          .row
+            form role="form"
+              .col-lg-6
+                .form-group
+                  label Id
+                  input.form-control ng-model='user.id' ng-disabled="true"
+                .form-group
+                  label First Name
+                  input.form-control ng-model='user.first_name' ng-disabled="true"
+                .form-group
+                  label Last Name
+                  input.form-control ng-model='user.last_name' ng-disabled="true"
+                .form-group
+                  label Email
+                  input.form-control ng-model='user.email' ng-disabled="true"
+                  p.help-block Email
+                .form-group
+                  label Address
+                  input.form-control ng-model='user.address' ng-disabled="true"
+                .form-group
+                  label City
+                  input.form-control ng-model='user.city' ng-disabled="true"
+                .form-group
+                  label State
+                  input.form-control ng-model='user.state' ng-disabled="true"
+                .form-group
+                  label Country
+                  input.form-control ng-model='user.country' ng-disabled="true"
+              .col-lg-6
+                .form-group
+                  label Gender
+                  input.form-control ng-model='user.gender' ng-disabled="true"
+                .form-group
+                  label Phone
+                  input.form-control ng-model='user.phone' ng-disabled="true"
+                .form-group
+                  label #Items
+                  input.form-control ng-model='user.total_items' ng-disabled="true"
+                .form-group
+                  label #Reviews
+                  input.form-control ng-model='user.total_reviews' ng-disabled="true"
+                .form-group
+                  label #Followers
+                  input.form-control ng-model='user.total_followers' ng-disabled="true"
+                form-group
+                  label #Rates
+                  input.form-control ng-model='user.total_rate' ng-disabled="true"
+                .form-group
+                  label Average Rating
+                  input.form-control ng-model='user.average_rating' ng-disabled="true"
+
+
+
+
+

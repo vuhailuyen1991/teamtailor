@@ -12,6 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require angular
+//= require angular-resource
+//= require angular-route
+//= require angular-bootstrap
+//= require angular-ui-router
+//= require angular-rails-templates
 //= require materialize-sprockets
+//= require_tree .
+//= require_tree ./app/Candidates/.
+
+
+
