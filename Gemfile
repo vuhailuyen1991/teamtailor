@@ -32,6 +32,9 @@ gem 'resque'
 gem 'resque-scheduler'
 gem 'whenever', :require => false
 gem 'squeel'
+gem 'bower-rails'
+gem 'angular-rails-templates'
+gem 'slim-rails'
 
 group :development do
   gem "better_errors"
