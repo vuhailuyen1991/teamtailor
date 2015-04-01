@@ -1,7 +1,40 @@
-#page-wrapper
-  .row
-    .col-lg-12
-      h1.page-header Candidates
-
+#page-wrapper.container
+  .col-lg-12
+    h1.page-header Candidates
+  br
+  table.table st-safe-src="candidates" st-table="candidatesDisplay"
+    thead
+      tr
+        th colspan="7"
+          input.form-control placeholder=("search candidates") st-search="" type="search"
+      tr
+        th st-sort="id" Id
+        th st-sort="first_name" First Name
+        th st-sort="last_name" Last Name
+        th st-sort="email" Email
+        th st-sort="phone" Phone
+        th st-sort="skill" Skill
+        th Actions
+    tbody
+      tr ng-repeat=("candidate in candidatesDisplay")
+        td
+          | {{candidate.id}}
+        td
+          | {{candidate.first_name}}
+        td
+          | {{candidate.last_name}}
+        td
+          | {{candidate.email}}
+        td
+          | {{candidate.phone}}
+        td
+          | {{candidate.skill}}
+        td
+          button.btn.btn-sm.btn-info ng-click="goToCandidate(candidate)" type="button"
+            | Detail
+    tfoot
+      tr
+        td.text-center colspan="7"
+          div st-displayed-pages="15" st-items-by-page="25" st-pagination=""
 
 

@@ -18,7 +18,11 @@
 //= require angular-bootstrap
 //= require angular-ui-router
 //= require angular-rails-templates
+//= require angular-smart-table
+//= require ment.io
 //= require materialize-sprockets
+//= require angular-bootstrap
+//= require bootstrap.min
 //= require_tree .
 //= require_tree ./app/Candidates/.
 
