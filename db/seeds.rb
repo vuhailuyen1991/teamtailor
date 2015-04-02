@@ -5,8 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+User.destroy_all
+Candidate.destroy_all
 users = [
+         {username: 'team.tailor', first_name: 'Team', last_name: 'Tailor', email: 'admin@teamtailor.com'},
          {username: 'luyen.vu', first_name: 'Luyen', last_name: 'Vu', email: 'luyen.vu@teamtailor.com'},
          {username: 'an.nguyen', first_name: 'An', last_name: 'Nguyen', email: 'an.nguyen@teamtailor.com'},
          {username: 'lee.tran', first_name: 'Lee', last_name: 'Tran', email: 'lee.tran@teamtailor.com'}
@@ -25,14 +27,18 @@ users.each do |u|
 end
 
 candidates = [
-              {first_name: 'Candidate1', last_name: 'Rooney', skill: 'football'},
-              {first_name: 'Candidate2', last_name: 'Choi', skill: 'badminton'}
+              {first_name: 'Candidate1', last_name: 'Rooney', skill: 'football', email: 'candidate1@gmail.com',
+               phone: '0164-12312-32323'},
+              {first_name: 'Candidate2', last_name: 'Choi', skill: 'badminton', email: 'candidate2@gmail.com',
+               phone: '0165-12312-32333'}
              ]
 candidates.each do |d|
   d1 = Candidate.new
   d1.first_name = d[:first_name]
   d1.last_name = d[:last_name]
   d1.email = d[:email]
+  d1.phone = d[:phone]
+  d1.skill = d[:skill]
   d1.save!
 end
 

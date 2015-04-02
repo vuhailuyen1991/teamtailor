@@ -11,6 +11,7 @@ class MentionService
   def mention
     notification = create_notification
     send_email notification
+    notification
   end
 
   protected

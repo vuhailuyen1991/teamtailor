@@ -23,8 +23,7 @@
 //= require materialize-sprockets
 //= require angular-bootstrap
 //= require bootstrap.min
+//= require websocket_rails/main
+//= require angular-ui-notification/dist/angular-ui-notification.min
 //= require_tree .
 //= require_tree ./app/Candidates/.
-
-
-

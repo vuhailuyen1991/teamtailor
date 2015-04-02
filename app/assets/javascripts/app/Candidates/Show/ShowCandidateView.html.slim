@@ -1,0 +1,33 @@
+#page-wrapper.container
+  .col-lg-12
+    h1.page-header Candidate Detail
+  br
+  table.table
+    thead
+      tr
+        th Id
+        th First Name
+        th Last Name
+        th Email
+        th Phone
+        th Skill
+    tbody
+      td
+        | {{candidate.id}}
+      td
+        | {{candidate.first_name}}
+      td
+        | {{candidate.last_name}}
+      td
+        | {{candidate.email}}
+      td
+        | {{candidate.phone}}
+      td
+        | {{candidate.skill}}
+
+  .row
+    .col-md-8
+      input.form-control type="text" mentio='' mentio-typed-text="typedTerm" mentio-items="hr | filter:label:typedTerm" ng-model="mentionMessage" mentio-select="selectHr(item)"
+    .col-md-4
+      button.btn.btn-sm.btn-info ng-click="sendMessage()" type="button"
+       | Send
