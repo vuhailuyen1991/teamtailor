@@ -5,7 +5,7 @@ Author: luyen.vu
 # Installation:
 
 rake db:seed
-rails s
+rails s -p 3003 -b 0.0.0.0
 This is a full Single Page Application written by AngularJS and Rails.
 
 # Front-end:
